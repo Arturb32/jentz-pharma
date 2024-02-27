@@ -28,7 +28,7 @@ const ProductCard = ({ product, handleAddToCart }: ProductCardProps) => {
       />
       <div
         key={product.id}
-        className="flex flex-col items-center h-full w-72 bg-blue-50 rounded-lg shadow-lg py-4 px-2 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 gap-2"
+        className="flex flex-col items-center h-full w-72 bg-blue-900 rounded-lg shadow-lg py-4 px-2 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-105 gap-2"
       >
         <Image
           src={product.image}
@@ -37,8 +37,8 @@ const ProductCard = ({ product, handleAddToCart }: ProductCardProps) => {
           height={180}
           className="rounded-lg border-2 border-blue-300"
         />
-        <h3 className="text-xl font-bold text-blue-900">{product.name}</h3>
-        <p className="text-blue-700 mt-1">${product.price}</p>
+        <h3 className="text-xl font-bold text-white">{product.name}</h3>
+        <p className="text-white mt-1">${product.price}</p>
         <div className="flex flex-row gap-2">
           <button
             onClick={onModalOpen}
