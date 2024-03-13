@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Product } from "../interfaces";
+import { Product } from "../types";
 import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 

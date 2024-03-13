@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { Cart, Product } from "../../interfaces";
+import { Cart, Product } from "../../types";
 import ProductCard from "../../components/ProductCard";
 import CartDrawer from "../../components/CartDrawer";
 import { FaShoppingCart } from "react-icons/fa";
-import { productsMock } from "../api/users/products/product";
+import { productsMock } from "../api/product";
 import SidebarMenu from "../../components/SidebarMenu";
 
 const Products = () => {
