@@ -1,48 +1,62 @@
-# TypeScript Next.js example
+## Introduction
 
-This is a really simple project that shows the usage of Next.js with TypeScript.
+This prototype, inspired by pharmaceutical innovation, utilizes Next.js, React, and TailwindCSS to simulate digital health solutions.
 
-## Deploy your own
+## Features
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=next-example) or preview live with [StackBlitz](https://stackblitz.com/github/vercel/next.js/tree/canary/examples/with-typescript)
+Next.js: The core framework providing server-side rendering and static site generation capabilities.
+React: A library for building user interfaces.
+TailwindCSS: A utility-first CSS framework for rapidly building custom designs.
+TypeScript: Adds static type definitions to JavaScript, enhancing development efficiency and reducing runtime errors.
+Framer Motion: A library for React that makes creating animations easy.
+React Icons: Provides access to popular icons.
+OpenAI SDK: Enables integration with OpenAI's API for AI-powered features.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/next.js/tree/canary/examples/with-typescript&project-name=with-typescript&repository-name=with-typescript)
+## Getting Started
 
-## How to use it?
+To get started with this project, follow these steps:
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [npm](https://docs.npmjs.com/cli/init), [Yarn](https://yarnpkg.com/lang/en/docs/cli/create/), or [pnpm](https://pnpm.io) to bootstrap the example:
+Clone the repository
+bash
+Copy code
+git clone <repository-url>
+Install dependencies
+Navigate to the project directory and install the required dependencies:
 
-```bash
-npx create-next-app --example with-typescript with-typescript-app
-```
+bash
+Copy code
+npm install
+or if you use yarn:
 
-```bash
-yarn create next-app --example with-typescript with-typescript-app
-```
+bash
+Copy code
+yarn
+Environment Setup
+Make sure to create a .env.local file in the root of your project (if the project requires) and add any environment variables needed for the project.
 
-```bash
-pnpm create next-app --example with-typescript with-typescript-app
-```
+## Available Scripts
 
-Deploy it to the cloud with [Vercel](https://vercel.com/new?utm_source=github&utm_medium=readme&utm_campaign=next-example) ([Documentation](https://nextjs.org/docs/deployment)).
+In the project directory, you can run:
 
-## Notes
+npm run dev or npm run rundev
+Runs the app in development mode. Open http://localhost:3000 to view it in your browser.
 
-This example shows how to integrate the TypeScript type system into Next.js. Since TypeScript is supported out of the box with Next.js, all we have to do is to install TypeScript.
+The page will reload when you make changes. You may also see any lint errors in the console.
 
-```
-npm install --save-dev typescript
-```
+npm run build
+Builds the app for production to the .next folder. It correctly bundles React in production mode and optimizes the build for the best performance.
 
-To enable TypeScript's features, we install the type declarations for React and Node.
+npm start
+Starts the server in production mode. The application should be built with npm run build first.
 
-```
-npm install --save-dev @types/react @types/react-dom @types/node
-```
+npm run type-check
+Runs TypeScript's tsc to check for type errors in your project.
 
-When we run `next dev` the next time, Next.js will start looking for any `.ts` or `.tsx` files in our project and builds it. It even automatically creates a `tsconfig.json` file for our project with the recommended settings.
+## Learn More
 
-Next.js has built-in TypeScript declarations, so we'll get autocompletion for Next.js' modules straight away.
+To learn more about the technologies used in this project, take a look at the following resources:
 
-A `type-check` script is also added to `package.json`, which runs TypeScript's `tsc` CLI in `noEmit` mode to run type-checking separately. You can then include this, for example, in your `test` scripts.
-# jentz-pharma
+Next.js Documentation - learn about Next.js features and API.
+React documentation - learn about React.
+TailwindCSS Documentation - learn about TailwindCSS.
+TypeScript Documentation - learn about TypeScript.
