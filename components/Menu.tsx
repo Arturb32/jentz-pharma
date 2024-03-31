@@ -2,7 +2,7 @@ import React from "react";
 
 const Menu = () => {
   return (
-    <header className="flex flex-row w-full h-fit bg-blue-900 items-center justify-center">
+    <header className="flex flex-row w-full bg-blue-900 items-center justify-center h-fit">
       <a
         href="home"
         className="px-4 py-3 text-white font-sans hover:text-blue-300 transition-colors duration-200"
