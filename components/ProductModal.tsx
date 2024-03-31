@@ -1,5 +1,5 @@
 import { FaTimes } from "react-icons/fa";
-import { Product } from "../interfaces";
+import { Product } from "../types";
 
 type ProductModalProps = {
   product: Product;

@@ -4,7 +4,8 @@ node_modules
 coverage
 .DS_STORE
 package-lock.json
-.env
 yarn-error.log
+.next
+.env.local
 
 .vscode/settings.json

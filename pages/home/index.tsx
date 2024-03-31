@@ -6,7 +6,7 @@ const dataImg = [{ image: logo.src }, { image: logo.src }, { image: logo.src }];
 
 const Home = () => {
   return (
-    <div className="h-full w-full bg-gradient-to-b from-blue-200 to-blue-400 min-h-screen flex flex-col items-center justify-center">
+    <div className="w-full bg-gradient-to-b from-blue-200 to-blue-400 h-[calc(100vh-48px)] flex flex-col items-center justify-center">
       <div className="text-center">
         <h1 className="text-4xl font-bold text-white mb-4">
           Welcome to Jentz Pharma
