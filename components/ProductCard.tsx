@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Product } from "../interfaces";
+import { Product } from "../types";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
 import ProductModal from "./ProductModal";

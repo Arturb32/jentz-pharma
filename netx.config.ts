@@ -1,15 +1,10 @@
-// @ts-check
-
-const { PHASE_DEVELOPMENT_SERVER } = require("next/constants");
-
-module.exports = (phase, { defaultConfig }) => {
-  if (phase === PHASE_DEVELOPMENT_SERVER) {
-    return {
-      /* development only config options here */
-    };
-  }
-
-  return {
-    /* config options for all phases except development here */
-  };
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  reactStrictMode: true,
+  env: {
+    NEXT_PUBLIC_JENTZ_PHARMA_OPENAI_API_KEY:
+      process.env.NEXT_PUBLIC_JENTZ_PHARMA_OPENAI_API_KEY,
+  },
 };
+
+module.exports = nextConfig;
