@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Product } from "../types";
 import Image from "next/image";
 import { FaShoppingCart } from "react-icons/fa";
