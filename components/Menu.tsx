@@ -1,5 +1,3 @@
-import React from "react";
-
 const Menu = () => {
   return (
     <header className="flex flex-row w-full bg-blue-900 items-center justify-center h-fit">

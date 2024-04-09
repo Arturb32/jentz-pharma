@@ -1,5 +1,3 @@
-import React from "react";
-
 const Contact = () => {
   return (
     <div className="flex flex-col items-center justify-center h-[calc(100vh-48px)] bg-gradient-to-br from-blue-200 to-blue-400 \">
