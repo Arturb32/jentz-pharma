@@ -2,7 +2,7 @@ const Menu = () => {
   return (
     <header className="flex flex-row w-full bg-blue-900 items-center justify-center h-fit">
       <a
-        href="home"
+        href="/"
         className="px-4 py-3 text-white font-sans hover:text-blue-300 transition-colors duration-200"
       >
         Home

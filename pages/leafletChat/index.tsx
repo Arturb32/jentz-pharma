@@ -36,7 +36,7 @@ const LeafletChat = () => {
   }, [messages]);
 
   return (
-    <div className="flex w-full items-center justify-center bg-gradient-to-b from-blue-200 to-blue-400 p-4 sm:p-24 h-[calc(100vh-48px)]">
+    <div className="flex w-full items-center justify-center bg-gradient-to-b from-blue-200 to-blue-400 p-4 sm:p-24 h-screen">
       <div className="flex flex-col w-full sm:w-3/4 md:w-1/2 lg:w-2/5 xl:w-1/3 h-full bg-white rounded-xl shadow-md p-6">
         <h1 className="text-2xl sm:text-3xl font-bold mb-4 text-blue-700">
           Leaflet Chat
