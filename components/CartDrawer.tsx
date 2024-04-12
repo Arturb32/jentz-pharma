@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { motion } from "framer-motion";
 import { Cart, Product } from "../types";
 import { FaTimes } from "react-icons/fa";

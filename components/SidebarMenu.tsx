@@ -1,6 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Product } from "../types";
-import { motion } from "framer-motion";
 import { FaTimes } from "react-icons/fa";
 
 type SidebarMenuProps = {

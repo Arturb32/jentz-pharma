@@ -1,4 +1,4 @@
-import React, { useState, useEffect, KeyboardEvent } from "react";
+import { useState, useEffect, KeyboardEvent } from "react";
 import { callOpenAI } from "../api/chat";
 import { Message } from "../../types";
 
