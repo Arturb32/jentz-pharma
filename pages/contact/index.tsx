@@ -1,9 +1,21 @@
+import React, { useState } from "react";
+
 const Contact = () => {
+  // State for each form field
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+
+  // Handle form submission
+  const handleSubmit = (event) => {
+    event.preventDefault(); // Prevent default form submission behavior
+  };
+
   return (
-    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-blue-200 to-blue-400 \">
+    <div className="flex flex-col items-center justify-center h-screen bg-gradient-to-br from-blue-200 to-blue-400">
       <h1 className="text-4xl font-bold text-white mb-8">Contact Us</h1>
       <div className="bg-white p-8 rounded-lg shadow-lg w-full max-w-md">
-        <form className="space-y-4">
+        <form className="space-y-4" onSubmit={handleSubmit}>
           <div>
             <label htmlFor="name" className="block text-blue-900">
               Name
@@ -14,6 +26,8 @@ const Contact = () => {
               name="name"
               className="w-full p-2 border rounded-md"
               placeholder="Your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
             />
           </div>
           <div>
@@ -26,6 +40,8 @@ const Contact = () => {
               name="email"
               className="w-full p-2 border rounded-md"
               placeholder="Your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
             />
           </div>
           <div>
@@ -38,6 +54,8 @@ const Contact = () => {
               rows={4}
               className="w-full p-2 border rounded-md"
               placeholder="Your message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
             ></textarea>
           </div>
           <button
