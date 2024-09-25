@@ -9,38 +9,52 @@ export type User = {
   name: string;
 };
 
+export enum ProductCategory {
+  MEDICINE = "MEDICINE",
+  WELLNESS = "WELLNESS",
+  EQUIPMENT = "EQUIPMENT",
+  OTHER = "OTHER",
+}
+
 export type Product = {
   id: number;
   name: string;
+  description?: string;
   price: number;
-  image: string;
-  amount: number;
-  description: string;
-  category: string;
-  stock: number;
-  manufacturer: string;
-  expirationDate: string;
-  composition: string;
-  indications: string;
-  contraindications: string;
-  warnings: string;
-  precautions: string;
-  adverseReactions: string;
-  presentation: string;
-  registration: string;
-  laboratorialTests: string;
-  therapeuticClass: string;
+  medicationId: number;
+  category: ProductCategory;
+  createdAt?: Date;
+  updatedAt?: Date;
+  productImageUrl?: String;
+  leafletUrl?: String;
 };
 
-export type Cart = {
+export type Medication = {
+  id: number;
+  name: string;
   products: Product[];
-  total: number;
+  dosage?: string;
+  sideEffects?: string;
+  prescriptionRequired: boolean;
+  createdAt?: Date;
+  updatedAt?: Date;
+  primarySupplierId?: number;
+};
+
+export type Supplier = {
+  id: number;
+  name: string;
+  contactInfo?: string;
+  createdAt?: Date;
+  updatedAt?: Date;
+  primaryMedications: Medication[];
 };
 
 export type Assistant = {
   content: string;
   role: string;
 };
+
 export type Message = {
   content: string;
   role: string;
