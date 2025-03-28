@@ -2,20 +2,31 @@ import React from "react";
 
 const SkeletonLoader = () => {
   return (
-    <div className="animate-pulse space-y-4 w-full">
-      <div className="bg-gray-300 h-4 w-3/4 rounded"></div>
-      <div className="bg-gray-300 h-4 w-1/2 rounded"></div>
-      <div className="flex space-x-4">
-        <div className="bg-gray-300 h-10 w-10 rounded-full"></div>
-        <div className="flex-1 space-y-6 py-1">
-          <div className="h-2 bg-gray-300 rounded"></div>
-          <div className="space-y-3">
-            <div className="grid grid-cols-3 gap-4">
-              <div className="h-2 bg-gray-300 rounded col-span-2"></div>
-              <div className="h-2 bg-gray-300 rounded col-span-1"></div>
-            </div>
-            <div className="h-2 bg-gray-300 rounded"></div>
-          </div>
+    <div className="bg-white rounded-lg shadow-lg overflow-hidden animate-pulse">
+      {/* Imagem */}
+      <div className="relative aspect-square bg-gray-200">
+        <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 animate-shimmer"></div>
+      </div>
+
+      {/* Conteúdo */}
+      <div className="p-4">
+        {/* Título */}
+        <div className="h-6 bg-gray-200 rounded w-3/4 mb-3"></div>
+
+        {/* Preço */}
+        <div className="h-8 bg-gray-200 rounded w-1/4 mb-4"></div>
+
+        {/* Descrição */}
+        <div className="space-y-2 mb-4">
+          <div className="h-4 bg-gray-200 rounded w-full"></div>
+          <div className="h-4 bg-gray-200 rounded w-5/6"></div>
+          <div className="h-4 bg-gray-200 rounded w-4/6"></div>
+        </div>
+
+        {/* Botões */}
+        <div className="flex gap-2">
+          <div className="flex-1 h-10 bg-gray-200 rounded"></div>
+          <div className="flex-1 h-10 bg-gray-200 rounded"></div>
         </div>
       </div>
     </div>

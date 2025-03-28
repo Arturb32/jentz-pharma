@@ -6,12 +6,10 @@ type CarouselProps = {
 };
 
 const Carousel = ({ data }: CarouselProps) => {
-  // State and Ref initialization
   const [currentImg, setCurrentImg] = useState(0);
   const [carouselSize, setCarouselSize] = useState({ width: 0, height: 0 });
   const carouselRef = useRef(null);
 
-  // useEffect to get the initial carousel size
   useEffect(() => {
     let elem = carouselRef.current as unknown as HTMLDivElement;
     let { width, height } = elem.getBoundingClientRect();
@@ -24,46 +22,101 @@ const Carousel = ({ data }: CarouselProps) => {
   }, []);
 
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center p-4 gap-2">
-      <div className="w-64 h-64 rounded-md overflow-hidden relative">
+    <div className="w-full flex flex-col items-center justify-center gap-4">
+      <div className="relative w-full max-w-2xl aspect-square rounded-lg overflow-hidden shadow-lg">
         <div
           ref={carouselRef}
           style={{
             left: -currentImg * carouselSize.width,
           }}
-          className="w-full h-full absolute flex transition-all duration-300"
+          className="w-full h-full absolute flex transition-all duration-500 ease-in-out"
         >
           {data.map((v, i) => (
-            <div key={i} className="relative shrink-0 w-full h-full ">
+            <div key={i} className="relative shrink-0 w-full h-full">
               <Image
-                className="pointer-events-none"
-                alt={`carousel-image-${i}`}
+                className="object-cover"
+                alt={`Imagem ${i + 1} do carrossel`}
                 fill
                 src={v.image || "https://random.imagecdn.app/500/500"}
+                priority={i === 0}
               />
             </div>
           ))}
         </div>
-      </div>
-      <div className="flex justify-center">
+
+        {/* Botões de navegação */}
         <button
           disabled={currentImg === 0}
           onClick={() => setCurrentImg((prev) => prev - 1)}
-          className={`border px-4 py-2 font-bold ${
-            currentImg === 0 && "opacity-50"
+          className={`absolute left-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-blue-900 shadow-md transition-all duration-200 ${
+            currentImg === 0
+              ? "opacity-50 cursor-not-allowed"
+              : "hover:scale-110"
           }`}
+          aria-label="Imagem anterior"
         >
-          {"<"}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M15.75 19.5L8.25 12l7.5-7.5"
+            />
+          </svg>
         </button>
+
         <button
           disabled={currentImg === data.length - 1}
           onClick={() => setCurrentImg((prev) => prev + 1)}
-          className={`border px-4 py-2 font-bold ${
-            currentImg === data.length - 1 && "opacity-50"
+          className={`absolute right-4 top-1/2 -translate-y-1/2 p-2 rounded-full bg-white/80 hover:bg-white text-blue-900 shadow-md transition-all duration-200 ${
+            currentImg === data.length - 1
+              ? "opacity-50 cursor-not-allowed"
+              : "hover:scale-110"
           }`}
+          aria-label="Próxima imagem"
         >
-          {">"}
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            strokeWidth={2}
+            stroke="currentColor"
+            className="w-6 h-6"
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              d="M8.25 4.5l7.5 7.5-7.5 7.5"
+            />
+          </svg>
         </button>
+
+        {/* Indicadores de slide */}
+        <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
+          {data.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => setCurrentImg(index)}
+              className={`w-2 h-2 rounded-full transition-all duration-200 ${
+                currentImg === index
+                  ? "bg-white w-4"
+                  : "bg-white/50 hover:bg-white/80"
+              }`}
+              aria-label={`Ir para imagem ${index + 1}`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* Contador de slides */}
+      <div className="text-sm text-gray-600">
+        {currentImg + 1} / {data.length}
       </div>
     </div>
   );
